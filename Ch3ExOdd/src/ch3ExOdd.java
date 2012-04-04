@@ -15,12 +15,12 @@ public class ch3ExOdd {
 		System.out.println("Which exercise would you like to run?");
 		exercise = input.nextInt();
 		
-		/*while (exercise != 1 || 3 || 5 || 7) {
+		while (exercise != 1 && exercise != 3 && exercise != 5 && exercise != 7) {
 			System.out.println("That is not a valid number. \n" +
 					"Please enter an odd number from 1 to 7");
 			exercise = input.nextInt();
 		}
-		*/
+		
 	
 		//Run the determined exercise
 		switch (exercise) {
@@ -59,16 +59,15 @@ public class ch3ExOdd {
 			break;
 		
 		case 7:
-			System.out.format("%10s", "*****\n");
-			System.out.format("%4s %9s", "*", "*\n");
-			System.out.format("%3s %10s", "*", "*\n");
-			System.out.format("%2s %11s", "*", "*\n");
-			System.out.format("%1s %12s", "*", "*\n");
-			System.out.format("%1s %12s", "*", "*\n");
-			System.out.format("%2s %11s", "*", "*\n");
-			System.out.format("%3s %10s", "*", "*\n");
-			System.out.format("%4s %9s", "*", "*\n");
-			System.out.format("%10s", "*****\n");
+			System.out.println("    *****    ");
+			System.out.println("   *     *   ");
+			System.out.println("  * _   _ *  ");
+			System.out.println(" *  o   o  * ");
+			System.out.println("*     |     *");
+			System.out.println("*     +     *");
+			System.out.println("  * \\___/ *  ");
+			System.out.println("   *     *   ");
+			System.out.println("    *****    ");
 			break;
 		}
 		
