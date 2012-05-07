@@ -38,20 +38,29 @@ public class displayBox {
 	}
 
 	public static void drawBox(int height, int width) {
+		
 		String symbol = "*";
-		for (int i = 1, i <= height, i++) {
+		for (int i = 1; i <= height; i++) {
 			drawBar(width, symbol);
+			System.out.print("\n");
 		}
 	}
 
 
 	public static void drawBox(int height, int width, String symbol) {
-		// TODO Auto-generated method stub
+
+		for (int i = 1; i <=height; i++) {
+			drawBar(width, symbol);
+			System.out.print("\n");
+		}
 		
 	}
 
-	private static void drawBar(int width) {
-		// TODO Auto-generated method stub
+	private static void drawBar(int width, String symbol) {
+		
+		for (int i = 1; i <= width; i++) {
+			System.out.print(symbol);
+		}
 		
 	}
 }

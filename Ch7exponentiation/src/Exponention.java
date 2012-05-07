@@ -1,0 +1,43 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+
+public class Exponention {
+
+	/**
+	 * @param args
+	 * @author Tristan
+	 * 
+	 */
+	public static void main(String[] args) {
+		//Initialise Variables
+		double num;
+		int power;
+		double answer;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("What is the number: ");
+		num = input.nextDouble();
+		System.out.println("To what power should " + num + " be put to: ");
+		power = input.nextInt();
+		
+		answer = powerOf(num, power);
+		System.out.println(num + " to the power of " + power + " is " + answer);
+
+	}
+
+	/**
+	 * @author Tristan
+	 * @param num
+	 * @param power
+	 * @return num to the power of power
+	 * 
+	 */
+	private static double powerOf(double num, int power) {
+		double answer;
+		
+		answer = Math.pow(num, power);
+		return(answer);
+	}
+
+}
