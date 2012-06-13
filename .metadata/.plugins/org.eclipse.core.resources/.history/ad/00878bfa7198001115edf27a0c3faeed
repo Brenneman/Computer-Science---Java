@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+
+public class MetricConversion {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		//Initialise Variables
+		double number, answer;
+		Scanner input = new Scanner(System.in);
+		
+		//Get conversion choice
+		System.out.println("Convert:");
+		System.out.format("-%0s -%20s", "1. Inches to Centimeters", "5. Centimeters to Inches");
+		
+
+	}
+
+}

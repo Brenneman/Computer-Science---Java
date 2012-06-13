@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+
+public class MetricConversion {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		//Initialise Variables
+		double number, answer;
+		int choice;
+		String original, converted;
+		Scanner input = new Scanner(System.in);
+		
+		//Get conversion choice
+		System.out.println("Convert:");
+		System.out.println("1. Inches to Centimeters\t 5. Centimeters to Inches");
+		System.out.println("2. Feet to Centimeters  \t 6. Centimeters to Feet");
+		System.out.println("3. Yards to Meters      \t 7. Meters to Yards");
+		System.out.println("4. Miles to Kilomters   \t 8. Kilometers to Miles");
+		System.out.println();
+		
+		System.out.println("Enter your choice: ");
+		choice = input.nextInt();
+		System.out.println("Enter the nubmer to be converted: ");
+		number = input.nextDouble();
+		
+		switch(choice) {
+		case 1:
+			answer = inchesToCentimeters(number);
+			original = "Inches";
+			converted = "Centimeters";
+			break;
+		case 2:
+			answer = feetToCentimeters(number);
+			original = "Feet";
+			converted = "Centimeters";
+			break;
+		case 3:
+			answer = yardsToMeters(number);
+			original = "Yards";
+			converted = "Meters";
+			break;
+		case 4:
+			answer = milesToKilometers(number);
+			original = "Miles";
+			converted = "Kilometers";
+			break;
+		case 5:
+			answer = centimetersToInches(number);
+			original = "Centimeters";
+			converted = "Inches";
+			break;
+		case 6:
+			answer = centimetersToFeet(number);
+			original = "Centimeters";
+			converted = "Feet";
+			break;
+		case 7:
+			answer = metersToYards(number);
+			original = "Meters";
+			converted = "Yards";
+			break;
+		case 8:
+			answer = kilometersToMiles(number);
+			original = "Kilometers";
+			converted = "Miles";
+			break;
+		}
+		
+		System.out.println(number + original + " converted to " + converted + " is " + answer);
+
+	}
+
+	public static double inchesToCentimeters(double number) {
+		double answer;
+		answer = number * 2.54;
+		return(answer);
+	}
+
+}

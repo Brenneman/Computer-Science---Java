@@ -1,0 +1,59 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class nim {
+
+	/**
+	 * @param args
+	 * @author Tristan Brenneman
+	 * @version 1.0
+	 */
+	public static void main(String[] args) {
+		//initialise variables
+		int playerDraw, computerDraw;
+		int stones = (int) (16 * Math.random() + 15);
+		String rules;
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Welcome to a game of Nim. \n Would you like to view the rules? (yes or no): ");
+		rules = input.nextLine();
+		checkValid(rules);
+
+	}
+
+	public static void checkValid(String rules) {
+		boolean valid = false;
+		Scanner input = new Scanner(System.in);
+		do {
+			if(rules.compareTo("yes") == 0 || rules.compareTo("no") == 0) {
+				valid = true;
+				checkRules(rules);
+				return;
+			} else if(rules.compareTo("yes") == 0 && rules.compareTo("no") != 0) {
+				valid = false;
+				System.out.println("That is not a valid answer. Please enter either \"yes\" or \"no\": ");
+				rules = input.nextLine();
+			}
+		} while (valid == false);
+	}
+
+	public static void checkRules(String rules) {
+		if(rules.equals("yes")) {
+			displayRules();
+		} else if(rules.equals("no")) {
+			return;
+		}
+		
+		
+	}
+
+	public static void displayRules() {
+		System.out.println("The game of Nim:\n" +
+				"\t The game starts with a number of stones between 15 and 30\n" +
+				"\t You take 1 to 3 stones\n" +
+				"\t The computer then takes 1 to 3 stones\n" +
+				"\t You lose if you take the last stone");
+		return;
+	}
+
+}

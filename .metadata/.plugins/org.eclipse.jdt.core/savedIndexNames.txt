@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+F:\CompSci\.metadata\.plugins\org.eclipse.jdt.core
+1514841491.index
+328425525.index

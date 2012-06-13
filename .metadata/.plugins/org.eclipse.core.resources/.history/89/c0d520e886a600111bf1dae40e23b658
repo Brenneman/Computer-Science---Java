@@ -1,0 +1,12 @@
+
+public class main {
+
+	/**
+	 * @param args
+	 */
+	public static void coin(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

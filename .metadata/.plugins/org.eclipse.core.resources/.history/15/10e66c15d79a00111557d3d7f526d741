@@ -1,0 +1,131 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class nim {
+	static Scanner input = new Scanner(System.in);
+	/**
+	 * @param args
+	 * @author Tristan Brenneman
+	 * @version 1.0
+	 */
+	public static void main(String[] args) {
+		//initialise variables
+		int stones = (int) (16 * Math.random() + 15);
+		
+		
+		rules();
+		do {
+		stones = playerTurn(stones);
+		stones = computerTurn(stones);
+		} while(stones >= 0);
+		input.close();
+		failed();
+		
+
+	}
+
+	public static int computerTurn(int stones) {
+		int computerDraw;
+		do {
+			computerDraw = (int) (2 * Math.random() + 1);
+		} while(computerDraw > stones);
+		System.out.println("There are " + stones + " stones. The computer takes " + computerDraw + " stones");
+		stones = stones - computerDraw;
+		checkWin(stones);
+		return stones;
+	}
+
+	public static void checkWin(int stones) {
+		if(stones == 0) {
+			System.out.println("Congratulations, you won!");
+			System.exit(0);
+		} else {
+			return;
+		}
+		
+	}
+
+	public static int playerTurn(int stones) {
+		int playerDraw;
+		System.out.println("There are " + stones + " stones. How many would you like to take? ");
+		playerDraw = input.nextInt();
+		stones = checkValid(playerDraw, stones);
+		checkLose(stones);
+		return stones;
+		
+	}
+
+	public static int checkValid(int playerDraw, int stones) {
+		boolean valid = false;
+		
+		do {
+			if(playerDraw <= 3 && playerDraw <= stones && playerDraw >= 1) {
+				valid = true;
+				stones = stones - playerDraw;
+			} else {
+				valid = false;
+				System.out.println("That is an invalid draw. Please draw a number from 1 to 3");
+				playerDraw = input.nextInt();
+			}
+		} while(valid == false);
+		return stones;
+		
+	}
+
+	public static void checkLose(int stones) {
+		if(stones == 0) {
+			System.out.println("Sorry, but you lost!");
+			System.exit(0);
+		} else {
+			return;
+		}
+		
+	}
+
+	public static void rules() {
+		String rules;
+		System.out.println("Welcome to a game of Nim. \nWould you like to view the rules? (yes or no): ");
+		rules = input.nextLine();
+		checkValid(rules);		
+	}
+
+	public static void checkValid(String rules) {
+		boolean valid = false;
+		do {
+			if(rules.compareTo("yes") == 0 || rules.compareTo("no") == 0) {
+				valid = true;
+				checkRules(rules);
+			} else {
+				valid = false;
+				System.out.println("That is not a valid answer. Please enter either \"yes\" or \"no\": ");
+				rules = input.nextLine();				
+			}
+		} while (valid == false);
+				return;
+	}
+
+	public static void checkRules(String rules) {
+		if(rules.equals("yes")) {
+			displayRules();
+		} else if(rules.equals("no")) {
+			return;
+		}
+		
+		
+	}
+
+	public static void displayRules() {
+		System.out.println("The game of Nim:\n" +
+				"\t The game starts with a number of stones between 15 and 30\n" +
+				"\t You take 1 to 3 stones\n" +
+				"\t The computer then takes 1 to 3 stones\n" +
+				"\t You lose if you take the last stone");
+		return;
+	}
+	
+
+	public static void failed() {
+		System.out.println("Sorry, but there was a problem. Quitting...");		
+	}
+
+}

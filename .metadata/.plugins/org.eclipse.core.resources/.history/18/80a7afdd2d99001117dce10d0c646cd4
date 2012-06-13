@@ -1,0 +1,15 @@
+
+public class nim {
+
+	/**
+	 * @param args
+	 * @author Tristan Brenneman
+	 * @version 1.0
+	 */
+	public static void main(String[] args) {
+		//initialise variables
+		
+
+	}
+
+}
